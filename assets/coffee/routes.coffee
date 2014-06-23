@@ -6,7 +6,7 @@ define [
   ], (cfg, A) ->
   routes = ($routeProvider, $locationProvider) ->
     $routeProvider.when '/',
-        templateUrl: cfg.path.partial + 'home-partial.html'
+        templateUrl: "#{cfg.path.partial}home-partial.html"
 
     $routeProvider.otherwise
       redirectTo: '/'

@@ -29,4 +29,9 @@ define [
       '$scope']
 
     init: () ->
+      @addPartials()
+
+    addPartials: () ->
+      @$scope.headerPartial = "#{cfg.path.partial}/header-partial.html"
+      @$scope.homePartial = "#{cfg.path.partial}/home-partial.html"
       

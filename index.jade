@@ -7,4 +7,6 @@ html(lang='en', data-ng-controller='AppController')
     link(rel='stylesheet', href='/assets/css/styles.css')
     title(data-ng-bind='pageTitle') commenttree
   body
+    div(data-ng-include, data-src='headerPartial')
+    div(data-ng-include, data-src='homePartial')
     script(src='/assets/vendor/requirejs/require.js', data-main='/assets/js/app')
