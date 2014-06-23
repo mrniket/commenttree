@@ -13,6 +13,7 @@ define [
     'angular-animate'
     'angular-resource'
     'angular-route'
+    'firebase'
   ], () ->
     A.module cfg.ngApp, [
       'ngAnimate'

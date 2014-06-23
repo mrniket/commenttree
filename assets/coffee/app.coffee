@@ -8,6 +8,9 @@ require.config
     'angular-resource': '../vendor/angular-resource/angular-resource'
     'angular-route': '../vendor/angular-route/angular-route'
     'lodash': '../vendor/lodash/dist/lodash'
+    'firebase': '../vendor/firebase/firebase'
+    'angularfire': '../vendor/angularfire/angularfire.min'
+    'firebase_simple_login': '..vendor/firebase_simple_login/firebase_simple_login'
   shim:
     'angular':
       exports: 'angular'
