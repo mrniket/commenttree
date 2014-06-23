@@ -11,6 +11,7 @@ require.config
     'firebase': '../vendor/firebase/firebase'
     'angularfire': '../vendor/angularfire/angularfire.min'
     'firebase_simple_login': '..vendor/firebase_simple_login/firebase_simple_login'
+    'bootstrap': '../vendor/bootstrap/dist/js/bootstrap.min'
   shim:
     'angular':
       exports: 'angular'
