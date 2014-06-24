@@ -1,2 +1,6 @@
-div#home.row
+div#home(ng-controller="HomeController as home")
+	{{hello}}
+	button(ng-click="home.logoutUser()").btn.btn-primary Logout
 	h1 Welcome to commentTree
+	div(data-login)
+	div(data-register)

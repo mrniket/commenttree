@@ -1,0 +1,8 @@
+div#login
+	.input-group
+		p user: {{currentUser | json}}
+		p email: {{newUser.email}}
+		p password: {{newUser.password}}
+		input(type='text', placeholder='email', ng-model='newUser.email').form-control
+		input(type='text', placeholder='password', ng-model='newUser.password').form-control
+		button(ng-click="login()").btn Login

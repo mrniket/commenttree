@@ -19,6 +19,10 @@ define [
   # [`$route.reload()`](http://docs.angularjs.org/api/ngRoute.$route) after the navigation data has been loaded.
   # Jump to [`routes.coffee`](routes.html) ☛
   'routes'
+  'directive/login-directive'
+  'directive/register-directive'
+  'controller/home-controller'
+  'controller/navigation-controller'
   ], (cfg, A, RC) ->
   # Every controller class in radian follows the same pattern. It's also preferable to explicity specify the `$inject`
   # modules as this code will be minified.
@@ -26,10 +30,15 @@ define [
     # You register your controller by calling `@register` and passing in the class's name and then the dependancies as
     # an array.
     @register 'AppController', [
-      '$scope']
+      '$scope'
+      '$rootScope'
+    ]
 
     init: () ->
       @addPartials()
+      @$rootScope.$on "$firebaseSimpleLogin:login", (e, user) ->
+        console.log "User " + user.id + " successfully logged in!"
+        return
 
     addPartials: () ->
       @$scope.headerPartial = "#{cfg.path.partial}/header-partial.html"

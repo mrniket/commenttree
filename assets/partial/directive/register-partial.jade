@@ -1,0 +1,15 @@
+div.register
+    form(role='form')
+        .form-group
+            label(for='email') Email address
+            input.form-control(type='email', ng-model='newUser.email', placeholder='Enter email')
+        .form-group
+            label(for='password') Password
+            input.form-control(type='password', ng-model='newUser.password', placeholder='Password')
+        .form-group
+            label(for='team') Team
+            select.form-control(type='text', ng-model='newUser.team', placeholder='Choose your Favourite Team', ng-options='team.name for team in teams | orderByPriority | orderBy:"name"')
+        .form-group
+            label(for='nickname') Nickname
+            input.form-control(type='text', ng-model='newUser.nickname', placeholder='nickname')
+        button(type="submit", ng-click="register()").btn.btn-default Register

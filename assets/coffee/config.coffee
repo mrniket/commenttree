@@ -5,3 +5,4 @@ define [], () ->
   ngApp: 'commenttree'
   path:
     partial: '/assets/partial/'
+  firebaseUrl: 'https://sizzling-fire-6004.firebaseio.com'

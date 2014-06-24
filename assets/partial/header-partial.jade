@@ -1,20 +1,30 @@
-div#header.tableWidth
-    .row-fluid.tableWidth#navbar
-        .span12
-          #bannertitle.pull-left 
-            a(href="/") commentTree
-          ul#navbarlist.pull-right
-            li.inline#home(ng-class="{'selected': isActive('home')}")
-              a(href="/")
-                i.icon-home.icon-white
-            li.inline#profile(ng-class="{'selected': isActive('profile')}")
-              a(href="profile/0")
-                i.icon-user.icon-white
-            li.inline#teams(ng-class="{'selected': isActive('teams')}")
-              a(href="teams") Teams
-            li.inline#addMatch(ng-class="{'selected': (isActive('add match') || isActive('match'))}")
-              a(href="add_match") Matches
-            li.inline#signIn(ng-hide='loggedIn', ng-class="{'selected': isActive('login')}")
-              a(href="login") Sign In
-            li.inline#signOut(ng-show='loggedIn', ng-class="{'selected': isActive('logout')}")
-              a(href="logout") Sign Out
+div#header(data-ng-controller='NavigationController')
+    nav.navbar.navbar-default(role="navigation")
+        .container-fluid
+            // Brand and toggle get grouped for better mobile display
+            .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse-1')
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href='/') commentTree
+            #navbar-collapse-1.collapse.navbar-collapse
+                ul.nav.navbar-nav.navbar-right
+                    li.inline#home()
+                        a(href="/")
+                            i.icon-home.icon-white
+                    li.inline#profile()
+                        a(href="profile/0")
+                            i.icon-user.icon-white
+                    li.inline#teams()
+                        a(href="teams") Teams
+                    li.inline#addMatch()
+                        a(href="add_match") Matches {{hello}}
+                    //- li.inline#login
+                    //-     div(data-login)
+                    //li.inline#signIn(ng-hide='loggedIn', ng-class="{'selected': isActive('login')}")
+                    //    a(href="login") Sign In
+                    //li.inline#signOut(ng-show='loggedIn', ng-class="{'selected': isActive('logout')}")
+                    //    a(href="logout") Sign Out
+                    

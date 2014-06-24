@@ -1,3 +1,34 @@
 #header {
 
 }
+
+.tableWidth {
+  width: 100%;
+}
+
+.navbar {
+  background-color: #539DC2;
+}
+
+#navbarlist {
+  list-style-type:none;
+  margin:0;
+  padding:10px;
+  vertical-align: center;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+  padding: 12px;
+  border-left: 1px ridge #236B8E;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  text-decoration: none;
+  color:white;
+  background-color:#236B8E;
+}
+
+li .selected a {
+  background-color: #236B8E;
+}
