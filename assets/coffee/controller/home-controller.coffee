@@ -6,10 +6,10 @@ define [
     @register 'HomeController', [
       '$scope'
       'userService'
+      '$rootScope'
     ]
 
     init: ($scope) ->
 
     logoutUser: () =>
-      console.log "logout reached"
       @userService.logout()

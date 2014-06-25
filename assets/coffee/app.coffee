@@ -24,8 +24,17 @@ require.config
     'firebase':
       exports: 'firebase'
     'angularfire':
+      deps: [
+        'angular'
+        'firebase'
+      ]
       exports: 'angularfire'
     'firebase-simple-login':
+      deps: [
+        'angular'
+        'firebase'
+        'angularfire'
+      ]
       exports: 'firebase-simple-login'
 
 # Jump to [`startup.coffee`](startup.html) ☛

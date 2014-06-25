@@ -17,14 +17,22 @@ define [
     'firebase'
     'angularfire'
   ], () ->
-    A.module cfg.ngApp, [
+    A.module(cfg.ngApp, [
       'ngAnimate'
       'ngResource'
       'ngRoute'
       'ui.bootstrap'
       'firebase'
-    ]
+    ]).run ($rootScope) ->
+      $rootScope.$on "$firebaseSimpleLogin:login", (e, user) ->
+        console.log "User " + user.id + " successfully logged in!"
+        console.log e
+        return
+
+      $rootScope.$on "$firebaseSimpleLogin:logout", (e) ->
+        console.log "User successfully logged out!"
+        return
 
     # Jump to [`controller/app-controller.coffee`](app-controller.html) ☛
     require ['controller/app-controller'], () ->
-      A.bootstrap document.documentElement, [cfg.ngApp]
+      A.bootstrap(document.documentElement, [cfg.ngApp])

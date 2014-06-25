@@ -12,6 +12,6 @@ define [
     replace: true
     scope: {}
     link: ($scope, $element, $attrs) ->
-      $scope.currentUser = userService
+      $scope.currentUser = $rootScope.user
       $scope.login = () ->
         userService.login($scope.newUser)

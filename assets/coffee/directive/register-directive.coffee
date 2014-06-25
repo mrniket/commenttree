@@ -15,5 +15,4 @@ define [
     link: ($scope, $element, $attrs) ->
       $scope.teams = teamService.teams
       $scope.register = () ->
-        userService.register($scope.newUser).then (user) ->
-          userService.login($scope.newUser)
+        userService.register($scope.newUser)

@@ -1,6 +1,6 @@
 div#login
 	.input-group
-		p user: {{currentUser | json}}
+		p user: {{$root.user}}
 		p email: {{newUser.email}}
 		p password: {{newUser.password}}
 		input(type='text', placeholder='email', ng-model='newUser.email').form-control

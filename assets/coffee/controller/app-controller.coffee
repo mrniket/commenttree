@@ -36,9 +36,6 @@ define [
 
     init: () ->
       @addPartials()
-      @$rootScope.$on "$firebaseSimpleLogin:login", (e, user) ->
-        console.log "User " + user.id + " successfully logged in!"
-        return
 
     addPartials: () ->
       @$scope.headerPartial = "#{cfg.path.partial}/header-partial.html"
