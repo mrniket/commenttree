@@ -1,0 +1,28 @@
+div#teams.row(ng-controller="TeamsController")
+  br
+  .col-sm-1.col-md-1
+  .col-sm-6.col-md-6
+    table
+      tbody
+        tr#teamPadding(ng-repeat='t in teams | orderByPriority | orderBy:"name"')
+          td.imagePadding
+            img(src='{{t.logo}}')
+          td
+            a(name='{{t.name}}')
+            h1 {{t.name}} 
+            hr
+            h4 Founded: {{t.foundedYear}}
+            h4 Venue: {{t.homeStadium}} ({{t.stadiumCapacity}})
+            h4 Manager: {{t.manager}}
+            h4
+              | Website: 
+              a(ng-href='{t.website}') {{t.website}}
+            h4 Group: {{t.group}}
+            br
+            br
+            br
+  .col-sm-1.col-md-1
+  .col-sm-4.col-md-4
+    ul
+      li(ng-repeat='t in teams | orderByPriority | orderBy:"name"')
+        a(href="teams\#{{t.name}}") {{t.name}}

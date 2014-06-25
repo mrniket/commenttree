@@ -18,7 +18,7 @@ div#header(data-ng-controller='NavigationController')
                         a(href="profile/0")
                             i.icon-user.icon-white
                     li.inline#teams()
-                        a(href="teams") Teams
+                        a(data-ng-href="/teams", href="/teams", target="") Teams
                     li.inline#addMatch()
                         a(href="add_match") Matches {{hello}}
                     //- li.inline#login

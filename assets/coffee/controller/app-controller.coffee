@@ -23,6 +23,7 @@ define [
   'directive/register-directive'
   'controller/home-controller'
   'controller/navigation-controller'
+  'controller/teams-controller'
   ], (cfg, A, RC) ->
   # Every controller class in radian follows the same pattern. It's also preferable to explicity specify the `$inject`
   # modules as this code will be minified.

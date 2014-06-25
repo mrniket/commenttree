@@ -9,5 +9,5 @@ html(lang='en', data-ng-controller='AppController')
     title(data-ng-bind='pageTitle') commenttree
   body
     div(data-ng-include, data-src='headerPartial')
-    div(data-ng-include, data-src='homePartial')
+    div#view(data-ng-view, data-onload='handleViewLoaded()')
     script(src='/assets/vendor/requirejs/require.js', data-main='/assets/js/app')

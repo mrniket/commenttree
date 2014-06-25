@@ -5,7 +5,11 @@ define [
   'angular'
   ], (cfg, A) ->
   routes = ($routeProvider, $locationProvider) ->
-    $routeProvider.when '/',
+    $routeProvider
+      .when '/teams',
+        templateUrl: "#{cfg.path.partial}teams-partial.html"
+
+      .when '/',
         templateUrl: "#{cfg.path.partial}home-partial.html"
 
     $routeProvider.otherwise
