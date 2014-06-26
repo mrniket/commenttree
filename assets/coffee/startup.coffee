@@ -23,6 +23,7 @@ define [
       'ngRoute'
       'ui.bootstrap'
       'firebase'
+      'angularSpinkit'
     ]).run ($rootScope) ->
       $rootScope.$on "$firebaseSimpleLogin:login", (e, user) ->
         console.log "User " + user.id + " successfully logged in!"

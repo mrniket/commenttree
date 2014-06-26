@@ -5,17 +5,18 @@ div#user-profile(data-ng-controller="UserProfileController")
       .col-sm-1.col-md-1
       .col-sm-5.col-md-5
         #leftProfileColumn
-          table
-            tbody
-              tr
-                td
-                  img(src="http://www.gravatar.com/avatar/{{profileUser.md5_hash}}?s=100&d=mm").img-circle
-                td#profileInformation
-                  h2 {{profileUser.nickname}}
-                  h4 {{profileUser.nickname}}
-                  h3 {{profileUser.team.name}}
-                td
-                  img(src='{{profileUser.team.logo}}')
+          div(loading-spinner="viewLoading")
+            table
+              tbody
+                tr
+                  td
+                    img(src="http://www.gravatar.com/avatar/{{profileUser.md5_hash}}?s=100&d=mm").img-circle
+                  td#profileInformation
+                    h2 {{profileUser.nickname}}
+                    h4 {{profileUser.nickname}}
+                    h3 {{profileUser.team.name}}
+                  td
+                    img(src='{{profileUser.team.logo}}')
       .defHeight.col-sm-5.col-md-5
         form.well(ng-submit='update_profile_team(team)', ng-show='isPersonalProfilePage')
           .form-group

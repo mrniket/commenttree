@@ -26,6 +26,7 @@ define [
   'controller/teams-controller'
   'controller/user-profile-controller'
   'service/user-service'
+  'angular-spinkit'
   ], (cfg, A, RC) ->
   # Every controller class in radian follows the same pattern. It's also preferable to explicity specify the `$inject`
   # modules as this code will be minified.

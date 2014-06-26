@@ -48,4 +48,10 @@ define [
 
     getUserWithId: (id) ->
       @users.$child(id)
+
+    getCurrentUser: () ->
+      @auth.$getCurrentUser()
+
+    loadUsers: () ->
+      @$firebase(@userRef)
         

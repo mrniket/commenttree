@@ -3,7 +3,7 @@
 require.config
   baseUrl: '/assets/js/'
   paths:
-    'jquery': '../vendor/jquery/jquery.min'
+    'jquer': '../vendor/jquery/dist/jquery.min'
     'bootstrap': '../vendor/bootstrap/dist/js/bootstrap.min'
     'angular': '../vendor/angular/angular'
     'angular-animate': '../vendor/angular-animate/angular-animate'
@@ -14,28 +14,28 @@ require.config
     'angularfire': '../vendor/angularfire/angularfire.min'
     'firebase-simple-login': '../vendor/firebase-simple-login/firebase-simple-login'
     'angular-ui-bootstrap' : '../vendor/angular-bootstrap/ui-bootstrap-tpls.min'
+    # 'spin': '../vendor/spin.js/spin'
+    'angular-spinkit': '../vendor/angular-spinkit/build/angular-spinkit'
   shim:
     'angular':
+      deps: [
+        'jquer'
+      ]
       exports: 'angular'
     'lodash':
       exports: '_'
-    'bootstrap':
-      exports: 'bootstrap'
-    'firebase':
-      exports: 'firebase'
     'angularfire':
       deps: [
         'angular'
+        # 'spin'
         'firebase'
       ]
-      exports: 'angularfire'
     'firebase-simple-login':
       deps: [
         'angular'
         'firebase'
         'angularfire'
       ]
-      exports: 'firebase-simple-login'
 
 # Jump to [`startup.coffee`](startup.html) ☛
 require ['startup']
