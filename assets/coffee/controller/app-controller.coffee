@@ -24,6 +24,8 @@ define [
   'controller/home-controller'
   'controller/navigation-controller'
   'controller/teams-controller'
+  'controller/user-profile-controller'
+  'service/user-service'
   ], (cfg, A, RC) ->
   # Every controller class in radian follows the same pattern. It's also preferable to explicity specify the `$inject`
   # modules as this code will be minified.
@@ -33,6 +35,7 @@ define [
     @register 'AppController', [
       '$scope'
       '$rootScope'
+      'userService'
     ]
 
     init: () ->

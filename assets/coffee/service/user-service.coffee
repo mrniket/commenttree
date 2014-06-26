@@ -20,20 +20,19 @@ define [
 
     login: (user) =>
       console.log "got to login"
-      @hello = "hello"
       @auth.$login('password', user).then (authUser) =>
-        @$rootScope.user = @users.$child(authUser.uid)
+        @$rootScope.user = @users.$child(authUser.id)
 
 
     register: (newUser) ->
       console.log "got to register"
       @auth.$createUser(newUser.email, newUser.password).then (user) =>
-        @users[user.uid] =
+        @users[user.id] =
           email: newUser.email
           md5_hash: user.md5_hash
           nickname: newUser.nickname
           team: newUser.team
-        @users.$save(user.uid).then () =>
+        @users.$save(user.id).then () =>
           console.log "user saved"
           @login(newUser)
 
@@ -45,5 +44,8 @@ define [
     loadUserToRootScope: () ->
       @auth.$getCurrentUser().then (user) =>
         if user
-          @$rootScope.user = @users.$child(user.uid)
+          @$rootScope.user = @users.$child(user.id)
+
+    getUserWithId: (id) ->
+      @users.$child(id)
         

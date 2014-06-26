@@ -26,7 +26,6 @@ define [
     ]).run ($rootScope) ->
       $rootScope.$on "$firebaseSimpleLogin:login", (e, user) ->
         console.log "User " + user.id + " successfully logged in!"
-        console.log e
         return
 
       $rootScope.$on "$firebaseSimpleLogin:logout", (e) ->

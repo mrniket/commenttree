@@ -15,7 +15,7 @@ div#header(data-ng-controller='NavigationController')
                         a(href="/")
                             i.icon-home.icon-white
                     li.inline#profile()
-                        a(href="profile/0")
+                        a(data-ng-href="/profile", href="/profile", target="")
                             i.icon-user.icon-white
                     li.inline#teams()
                         a(data-ng-href="/teams", href="/teams", target="") Teams

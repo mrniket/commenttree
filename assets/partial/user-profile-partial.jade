@@ -1,0 +1,37 @@
+div#user-profile(data-ng-controller="UserProfileController")
+  br
+  .container-fluid
+    .row
+      .col-sm-1.col-md-1
+      .col-sm-5.col-md-5
+        #leftProfileColumn
+          table
+            tbody
+              tr
+                td
+                  img(src="http://www.gravatar.com/avatar/{{profileUser.md5_hash}}?s=100&d=mm").img-circle
+                td#profileInformation
+                  h2 {{profileUser.nickname}}
+                  h4 {{profileUser.nickname}}
+                  h3 {{profileUser.team.name}}
+                td
+                  img(src='{{profileUser.team.logo}}')
+      .defHeight.col-sm-5.col-md-5
+        form.well(ng-submit='update_profile_team(team)', ng-show='isPersonalProfilePage')
+          .form-group
+            label.control-label Change your team
+            .controls
+              select(ng-options='team.name for team in teams | orderByPriority | orderBy:"name"', ng-model='team')
+          .form-group
+            .controls
+              input.btn.form-control.btn-default(type='submit')
+        //- table.table.table-striped.defHeight.tableWidth(ng-init='comments = getUserComments()')
+        //-   tbody.feed.tableWidth.userFeed
+        //-     tr.tableWidth(ng-repeat='c in userComments | orderBy:"-timecreated"')
+        //-       td#profileComment.tableWidth(ng-style='getProfileCommentsBorder(profileUser.secondarycolorhex)')
+        //-         a(href='/match/{{c.matchid}}') {{c.hometeamname}} - {{c.awayteamname}}
+        //-         p.tableWidth
+        //-           | {{c.commentdata}}
+        //-           br
+        //-         p {{c.timecreated | date:'short'}}
+      .col-sm-1.col-md-1

@@ -9,6 +9,12 @@ define [
       .when '/teams',
         templateUrl: "#{cfg.path.partial}teams-partial.html"
 
+      .when '/profile/:userId',
+        templateUrl: "#{cfg.path.partial}user-profile-partial.html"
+
+      .when '/profile',
+        templateUrl: "#{cfg.path.partial}user-profile-partial.html"
+
       .when '/',
         templateUrl: "#{cfg.path.partial}home-partial.html"
 
