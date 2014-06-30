@@ -25,6 +25,7 @@ define [
   'controller/navigation-controller'
   'controller/teams-controller'
   'controller/user-profile-controller'
+  'controller/matches-controller'
   'service/user-service'
   'angular-spinkit'
   ], (cfg, A, RC) ->

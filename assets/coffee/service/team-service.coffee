@@ -10,3 +10,6 @@ define [
     init: ($firebase) ->
       teamsRef = new Firebase("#{cfg.firebaseUrl}/teams")
       @teams = @$firebase(teamsRef)
+
+    getTeamWithId: (id) ->
+      @teams.$child(id)

@@ -14,7 +14,7 @@ define [
       @loginRef = new Firebase(cfg.firebaseUrl)
       @auth = @$firebaseSimpleLogin(@loginRef)
       @userRef = new Firebase("#{cfg.firebaseUrl}/users")
-      @users = @$firebase(@userRef)
+      @users = @loadUsers()
       @loadUserToRootScope()
       return
 
@@ -26,13 +26,17 @@ define [
 
     register: (newUser) ->
       console.log "got to register"
-      @auth.$createUser(newUser.email, newUser.password).then (user) =>
-        @users[user.id] =
+      @auth.$createUser(newUser.email, newUser.password).then (auth) =>
+        console.log auth.user
+        @users[auth.user.id] =
           email: newUser.email
-          md5_hash: user.md5_hash
+          md5_hash: auth.user.md5_hash
           nickname: newUser.nickname
-          team: newUser.team
-        @users.$save(user.id).then () =>
+          team:
+            id: newUser.team.$id
+            name: newUser.team.name
+            logo: newUser.team.logo
+        @users.$save(auth.user.id).then () =>
           console.log "user saved"
           @login(newUser)
 
@@ -50,8 +54,19 @@ define [
       @users.$child(id)
 
     getCurrentUser: () ->
-      @auth.$getCurrentUser()
+      @auth.$getCurrentUser().then (auth) =>
+        if auth
+          return @getUserWithId(auth.id)
+        else
+          return null
 
     loadUsers: () ->
       @$firebase(@userRef)
+
+    changeTeam: (team) ->
+      @getCurrentUser().then (user) ->
+        if user
+          user.team.id = team.$id
+          user.team.logo = team.logo
+          user.$save()
         

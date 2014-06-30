@@ -18,7 +18,7 @@ div#user-profile(data-ng-controller="UserProfileController")
                   td
                     img(src='{{profileUser.team.logo}}')
       .defHeight.col-sm-5.col-md-5
-        form.well(ng-submit='update_profile_team(team)', ng-show='isPersonalProfilePage')
+        form.well(ng-submit="changeTeam(team)", ng-show='isPersonalProfilePage')
           .form-group
             label.control-label Change your team
             .controls

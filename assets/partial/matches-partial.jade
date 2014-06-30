@@ -1,0 +1,9 @@
+div#matches(data-ng-controller="MatchesController")
+	.container-fuild
+		.col-sm-12.col-md-3
+			wave-spinner
+		.col-sm-12.col-md-6
+			div(ng-repeat="match in matches | orderByPriority | orderBy:'-startTime'")
+				match-listing(homeTeamId="{{match.homeTeamId}}", awayTeamId="{{match.awayTeamId}}")
+		.col-sm-12.col-md-3
+			wave-spinner

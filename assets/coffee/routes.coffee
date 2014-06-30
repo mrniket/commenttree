@@ -15,6 +15,9 @@ define [
       .when '/profile',
         templateUrl: "#{cfg.path.partial}user-profile-partial.html"
 
+      .when '/matches',
+        templateUrl: "#{cfg.path.partial}matches-partial.html"
+
       .when '/',
         templateUrl: "#{cfg.path.partial}home-partial.html"
 

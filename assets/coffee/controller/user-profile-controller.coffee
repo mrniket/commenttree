@@ -17,6 +17,7 @@ define [
       @$scope.viewLoading = true
       @loadCorrectUser()
       @$scope.teams = @teamService.teams
+      @$scope.changeTeam = @changeTeam
 
     loadCorrectUser: () ->
       @userService.getCurrentUser().then (currentUser) =>
@@ -32,7 +33,8 @@ define [
             }
         else
           if currentUser
-            @$scope.profileUser = @userService.getUserWithId(currentUser.id)
+            console.log currentUser
+            @$scope.profileUser = @userService.getUserWithId(currentUser.$id)
             @$scope.isPersonalProfilePage = true
           else
             @$scope.profileUser = {
@@ -47,3 +49,8 @@ define [
           @$scope.isPersonalProfilePage = @$routeParams.userId == user.$id
         else
           @$scope.isPersonalProfilePage = @$rootScope.user != {}
+
+    changeTeam: (team) =>
+      # if user can run this function, I assume they are on their perosnal profile page
+      @userService.changeTeam(team)
+      return

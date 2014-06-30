@@ -20,7 +20,7 @@ div#header(data-ng-controller='NavigationController')
                     li.inline#teams()
                         a(data-ng-href="/teams", href="/teams", target="") Teams
                     li.inline#addMatch()
-                        a(href="add_match") Matches {{hello}}
+                        a(data-ng-href="/matches", href="/matches", target="") Matches
                     //- li.inline#login
                     //-     div(data-login)
                     //li.inline#signIn(ng-hide='loggedIn', ng-class="{'selected': isActive('login')}")
